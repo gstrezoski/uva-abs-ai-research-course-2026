@@ -11,8 +11,7 @@
     want to keep first.
 
 .USAGE
-        Set-ExecutionPolicy -Scope Process -Bypass
-        .\teardown-windows.ps1
+        powershell -ExecutionPolicy Bypass -File .\teardown-windows.ps1
 
     Optional parameters:
         -ProjectDir           Folder to delete (default: ~\research-course)
