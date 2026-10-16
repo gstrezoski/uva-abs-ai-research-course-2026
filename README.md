@@ -8,7 +8,7 @@ Course material and planning for a short UvA course that teaches researchers to 
 |---|---|
 | `slides/` | Lecture and lab decks, with their image assets |
 | `reading-materials/` | Lab assignments and facilitator plans |
-| `scripts/` | Windows setup and teardown scripts for participants, plus the standard `permissions.md` the setup script copies into every lab folder |
+| `scripts/` | Windows and macOS setup and teardown scripts for participants, a one-page install guide (`setup-guide.pdf`), and the standard `permissions.md` the setup script copies into every lab folder |
 | `labs/` | Starter code and data scripts per lab, with facilitator reference solutions |
 | `templates/` | Research log and AI-disclosure templates used across labs |
 | `meeting-notes/` | One folder per meeting: transcript, notes or summary, mind map |

@@ -11,8 +11,7 @@
 .USAGE
     Open PowerShell (a normal window, not "Run as administrator") and run:
 
-        Set-ExecutionPolicy -Scope Process -Bypass
-        .\setup-windows.ps1
+        powershell -ExecutionPolicy Bypass -File .\setup-windows.ps1
 
     Optional parameters:
         -ProjectDir  Where to put the course folder and venv (default: ~\research-course)
