@@ -1,0 +1,42 @@
+New Recording 28
+
+The meeting focused on finalizing the logistics and curriculum for an upcoming three-day AI research program. The group prioritized streamlining technical onboarding through local scripts and refined the instructional flow to emphasize ethics and practical research applications.
+
+Strategic Overview
+The program aims to bring participants up to speed on agentic AI, transitioning from theoretical understanding to hands-on research applications. A critical decision was made to shift from centralized "Team" subscriptions to a "Bring Your Own Subscription" model to bypass contractual and legal friction, with costs reimbursed via a dedicated cost center.
+
+Curriculum & Instructional Design
+
+Program Schedule & Curriculum
+
+• Day 1: Foundational Skills - Project organization, technical setup, and a mandatory Ethics & Privacy module (scraping, NDAs, and data leak prevention).
+• Day 2: Research Ecosystems - Literature search automation using university database APIs and $100 in free API credits.
+• Day 3: Replication & Modeling - Replication of econometric models and theory research. Discussion on AI's comparative advantage in solving complex derivations.
+
+• Instructional Shift: Ethics, safety, and privacy modules were moved to Day 1 to ensure participants are grounded in responsible AI use before beginning exercises.
+• Methodology: Focus on "reviving old research dreams"—using AI to solve complex derivations (e.g., fifth-order polynomials) that were previously computationally prohibitive.
+• Tooling Decision: The group decided to deprioritize "Lint" (mathematical verification software) to avoid distracting from the core agentic AI curriculum and to maintain focus on human-understandable intuition in research.
+
+Technical Setup & Logistics
+• Deployment: Georgie has developed PowerShell scripts for Windows and is finalizing a Mac script. Manual instructions will be provided for outliers (~20% expected failure rate due to University-managed machine restrictions).
+• Platform: Participants must register for CloudCode; one month of "Pro" access will be provided.
+• Location: Room 402.
+• Timing: Sessions run from 18:00 to 21:00, with food available from 17:30.
+
+Key Decisions & Friction
+• Troubleshooting Strategy: To avoid stalling lectures, participants struggling with setup will be paired with tech-proficient peers for real-time assistance.
+• Journal Requirements: Discussion highlighted that AI-generated proofs must be translated into human-understandable intuition to be viable for journal publication; pure computer verification is insufficient for peer acceptance.
+
+Next Steps
+
+For Georgie (User):
+
+• Technical: Upload the Mac setup script to the GitHub repository today.
+• Content: Expand Day 1 slides to include modules on prompt injection, proprietary data risks, and journal AI policies.
+• Distribution: Send the finalized scripts and GitHub repo link to Joachim by Sunday.
+
+For the Team:
+
+• Joachim: Draft the participant onboarding email including cost center details, software instructions, and the requirement to select a theoretical paper before the first lecture.
+• Joachim: Deliver Day 2 files to Georgie for packaging into the repository.
+• Marleen: Provide the specific paper selection criteria/selections to Joachim for the onboarding email.

@@ -2,6 +2,8 @@
 
 # Meeting audio stays local (large, and contains participants' voices)
 recordings/*.m4a
+meeting-notes/**/*.m4a
+meeting-notes/**/pocket_recordings_*.zip
 
 # Installers downloaded by scripts/setup-windows.ps1
 scripts/installers/
