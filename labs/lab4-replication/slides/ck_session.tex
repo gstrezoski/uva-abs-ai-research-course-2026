@@ -46,6 +46,7 @@
 % A prompt box meant to be copied from the PDF: no hyphenation, ragged right
 \newcommand{\prompt}[2][\linewidth]{{\setlength{\fboxsep}{6pt}\colorbox{soft}{\parbox{\dimexpr#1-12pt}{\raggedright\hyphenpenalty=10000\exhyphenpenalty=10000\small #2}}}}
 \newcommand{\copyhint}{{\scriptsize\color{calm}\faCopy[regular]\ copy and paste}}
+\newcommand{\habit}[3]{\begin{minipage}[t]{0.47\textwidth}{\color{accent}\large #1}\hspace{0.5em}\textbf{#2}\\[0.1em]{\small #3}\end{minipage}}
 \newcommand{\handson}[2]{\colorbox{accent}{\color{paper}\small\bfseries\faLaptopCode\ #1}\hspace{0.6em}{\small\color{accent}\bfseries #2}}
 
 \title{Replicating a classic with AI assistants}
@@ -85,22 +86,52 @@
 
 \section{My area: optimization}
 
+\begin{frame}{How I work with agents}
+\habit{\faBookOpen}{Read}{I ask for a slide deck that tells me a paper's main story.}\hfill
+\habit{\faRedo}{Replicate}{Agents rebuild published results from the authors' data and code.}\\[1em]
+\habit{\faVial}{Code and test}{Every number comes from a run, with checks that can fail.}\hfill
+\habit{\faCodeBranch}{GitHub}{Version control and pull requests, also to open-source repositories.}\\[1em]
+\habit{\faPen}{Write}{Agents draft articles, slides and emails; I rewrite them.}\hfill
+\habit{\faBalanceScale}{Stay critical}{I question every iteration, and compare frontier models: Codex and Claude.}
+\note{One minute. This deck itself is an example: Codex and Claude Code each replicated the paper independently, an agent made the maps, and the deck went to the course repository as a pull request.}
+\end{frame}
+
+\begin{frame}{What agents change for me}
+\begin{alertblock}{Not more papers, but more ambitious ones}
+Agents do not turn me into a paper mill. They let me take on research of a larger scope, especially where coding is a substantial part of the work.
+\end{alertblock}
+\vspace{1em}
+\begin{alertblock}{A critical reviewer of the code}
+I have written code by hand for thirty years, in many languages. That makes me very critical of how agents develop code: I read it, test it and push back.
+\end{alertblock}
+\note{One minute. The point to land: the gain is in scope and ambition, not in volume, and it depends on an experienced eye on the code.}
+\end{frame}
+
 \begin{frame}{Hands-On Mathematical Optimization with Python}
+\small
+A textbook with Krzysztof Postek, Alessandro Zocca and Jeffrey Kantor (Cambridge University Press, 2025). Every model is a notebook you can run, check and change: \url{https://mobook.github.io/MO-book/}\\[0.6em]
+\textbf{Demo: an agent runs one of the book's notebooks} \copyhint\\[0.2em]
+\prompt[\textwidth]{Run the notebook 02-production-planning-basic.ipynb and tell me the optimal plan and profit. Then: the demand for product U is capped at 40 units. What happens if that cap rises to 60? Change only that in a copy, run it, and show both results side by side.}\par
+\vspace{0.8em}
 \begin{columns}[T]
-\begin{column}{0.58\textwidth}
-\begin{itemize}
-\item A textbook with Krzysztof Postek, Alessandro Zocca and Jeffrey Kantor, Cambridge University Press, 2025.
-\item Every model is a notebook you can run, check and change.
-\item The companion notebooks are open to all:\\ \url{https://mobook.github.io/MO-book/}
-\end{itemize}
+\begin{column}{0.44\textwidth}
+\footnotesize
+\begin{tabular}{@{}lrr@{}}
+\toprule
+& U $\le$ 40 & U $\le$ 60\\
+\midrule
+Profit & 2600 & 2600\\
+Units of U, V & 20, 60 & 20, 60\\
+Labour A, B used & 80, 100 & 80, 100\\
+\bottomrule
+\end{tabular}
 \end{column}
-\begin{column}{0.37\textwidth}
-\begin{block}{The habit it teaches}
-A model is only as good as your ability to verify what the solver returned.
-\end{block}
+\begin{column}{0.52\textwidth}
+\footnotesize
+\alert{Nothing changes.} The agent noticed the surprise and checked why: the cap on U was never binding; labour A and B are used up (shadow prices 70 and 50, the U cap 0).
 \end{column}
 \end{columns}
-\note{One minute. Introduce yourself through the book: optimization, reproducible notebooks, and the habit of checking results.}
+\note{About 90 seconds. Real run on 16 October 2026: a fresh agent in an empty folder with a copy of the book's notebook 01/02, about 2.3 minutes, no errors. It edited one line, model.y_U = pyo.Var(bounds=(0, 40)) to (0, 60), ran both notebooks, and checked the shadow prices with a small script of its own. Its comparison and log are in demo-notebook/. The point for the room: a what-if that changes nothing is still informative, and a good agent explains why instead of just reporting the numbers.}
 \end{frame}
 
 \begin{frame}{With agents: replicating a location benchmark}
@@ -430,6 +461,16 @@ Claude Code asks permission before downloads and commands, Python has to be foun
 \note{Assign letters A to E around the room. With more than five pairs, give each letter to two pairs: they compare before reporting, which gives each a second opinion.}
 \end{frame}
 
+\begin{frame}{Round 2, advanced cards: the econometrics behind Table 5}
+\handson{optional}{for pairs who finish early, or as homework}\hfill\copyhint\\[0.6em]
+\begin{tabular}{@{}l@{\hspace{0.6em}}l@{}}
+\textbf{F} & \prompt[0.9\textwidth]{Is a model in changes right? Add wave-1 employment to model (iv) and instrument it with the number of cash registers (NREGS) and registers open at 11:00 (NREGS11). Compare with plain OLS.}\\[0.5em]
+\textbf{G} & \prompt[0.9\textwidth]{Reproduce Table 5 of the paper, rows 1 to 9 and 12. Print each value next to the paper's, and say which cells you cannot match and why.}\\
+\end{tabular}\\[0.8em]
+\small \textbf{F} is an instrumental-variables test from the paper's text (p.\,784). \textbf{G} is a partial replication: some rows are defined only vaguely in the paper.
+\note{F: measurement error in wave-1 employment makes plain OLS of the change on the level mechanically negative; the registers are instruments for the true store size. G: rows 10 and 11 need ZIP codes, which the public file lacks, so they are left out on purpose.}
+\end{frame}
+
 \begin{frame}{Round 2: what we found}
 \begin{tabular}{@{}lp{0.72\textwidth}@{}}
 \toprule
@@ -468,6 +509,39 @@ SER 8.75 and $p=0.40$: the footnote's regression.
 Reading the paper, you would never notice. Only rebuilding every number shows that one column mixes two regressions. Small here, but this is how you learn what a paper actually did.
 \end{alertblock}
 \note{Two minutes, right after the Round 2 results. Our run: without ownership 11.913 (7.394), SER 8.740, p = 0.308; with ownership 11.979 (7.419), SER 8.753, p = 0.405. Columns (ii) and (iv) reproduce completely, including their p-values, so the method is not the issue. That the table was assembled from two runs is our inference; the paper and code cannot confirm it. It changes no conclusion.}
+\end{frame}
+
+\begin{frame}{Advanced cards: what we found}
+\begin{columns}[T]
+\begin{column}{0.47\textwidth}
+\textbf{F: instrumental variables}\\[0.3em]
+\small
+\begin{tabular}{@{}lr@{}}
+\toprule
+Coefficient of wave-1 FTE & \\
+\midrule
+Paper, IV & 0.04 (0.24)\\
+Ours, IV (348 stores) & 0.03 (0.23)\\
+Ours, plain OLS & \alert{$-0.56$ (0.04)}\\
+\bottomrule
+\end{tabular}\\[0.4em]
+Plain OLS is pulled down by measurement error; the instrument removes that. A model in changes is fine.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{G: Table 5}\\[0.3em]
+\small
+\alert{21 of 36} published cells match at two decimals.\\[0.3em]
+\footnotesize
+\textbf{Match:} weighting by initial size, the Pennsylvania placebo, most call-back and closure rows.\\[0.2em]
+\textbf{No match:} interview-week dummies; percentage columns of the FTE variants.\\[0.2em]
+\textbf{Paper vs paper:} Table 5 prints 2.30 (1.19) where Table 4 prints 2.30 (1.20).
+\end{column}
+\end{columns}
+\vspace{0.6em}
+\begin{alertblock}{The pattern}
+Robustness checks with a clear definition reproduce; the vaguely described ones do not.
+\end{alertblock}
+\note{Our run, 16 October 2026, advanced/ck_table5_iv.py. F: the paper reports only the IV coefficient; the OLS line is ours. Nine stores lack register counts, which may explain the 0.01 difference. G: rows 3-5 change columns match once the sample is held at 357 stores; dividing by wave-1 instead of average employment brings the percentage columns close (0.27 vs 0.28, 0.32 vs 0.30, 0.20 vs 0.17) but not exact. Row 6 excludes 31 shore stores where the paper says 35; row 8 excludes 63 stores where the paper says 70. Rows 10-11 need ZIP codes.}
 \end{frame}
 
 \begin{frame}{An assistant explains the paper}

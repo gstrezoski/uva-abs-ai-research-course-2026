@@ -10,6 +10,8 @@ Joaquim's 60-minute part of Lab 4: five minutes on optimization with agents, the
 | `ck_podcast_1min.mp3` | One-minute podcast (58.5 s) synthesized with the Windows built-in voices (Zira as host, David as economist) |
 | `ck_podcast_1min.md` | The script of that podcast |
 | `demo-run/` | The dry run behind the Checkpoint and timeline slides: a fresh agent given only the Round 1 prompt. Its script, its printed output and its own step-by-step log |
+| `demo-notebook/` | The notebook demo on the book slide: a fresh agent ran MO-book notebook 01/02 and a what-if (demand cap on U from 40 to 60). Its comparison and log |
+| `advanced/` | Optional cards F and G: `ck_table5_iv.py` reproduces Table 5 and the IV test of the first-difference model; `table5_iv_results.txt` is its output. Run: `python -I advanced/ck_table5_iv.py <path/to/public.dat>` |
 | `figures/` | Kings maps (made by Codex from saved solutions) and the UvA logo files |
 
 ## Build

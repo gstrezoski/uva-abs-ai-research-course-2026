@@ -1,0 +1,18 @@
+Production planning: original vs what-if (demand cap on U raised 40 -> 60)
+Source: executed notebooks 02-executed.ipynb and 02-whatif-U60.ipynb (HiGHS 1.15.1, status Optimal in both)
+
+Quantity                  Original (U <= 40)   What-if (U <= 60)   Change
+------------------------  -------------------  ------------------  ------
+Profit                              2600.00             2600.00         0
+Revenue                            18000.00            18000.00         0
+Cost                               15400.00            15400.00         0
+y_U  (units of U)                     20.0                20.0          0
+y_V  (units of V)                     60.0                60.0          0
+x_M  (raw material M)                740.0               740.0          0
+x_A  (labor A, max 80)                80.0                80.0          0
+x_B  (labor B, max 100)              100.0               100.0          0
+Upper bound on y_U                      40                  60        +20
+
+Binding: labor A (x_A = 80) and labor B (x_B = 100) at their upper bounds in both runs.
+Not binding: the demand cap on U (y_U = 20 < 40, and 20 < 60).
+Result: raising the cap from 40 to 60 changes neither the plan nor the profit.

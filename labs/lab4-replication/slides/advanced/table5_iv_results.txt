@@ -1,0 +1,29 @@
+Table 5. Each cell: ours (SE) n, then = if it matches the published value at 2 decimals, x if not
+                                                          (i) NJ, change           (ii) GAP, change            (iii) NJ, prop.            (iv) GAP, prop.
+  1 Base specification                          2.30 ( 1.20) n=357 x  14.92 ( 6.21) n=357 =   0.05 ( 0.05) n=357 =   0.34 ( 0.26) n=357 =
+                                                       paper 2.30 (1.19)         paper 14.92 (6.21)          paper 0.05 (0.05)          paper 0.34 (0.26)
+  2 Temporarily closed stores as closed         2.03 ( 1.22) n=361 x  14.42 ( 6.31) n=361 =   0.04 ( 0.05) n=361 =   0.34 ( 0.27) n=361 =
+                                                       paper 2.20 (1.21)         paper 14.42 (6.31)          paper 0.04 (0.05)          paper 0.34 (0.27)
+  3 Exclude managers (same 357 stores)          2.34 ( 1.17) n=357 =  14.69 ( 6.05) n=357 =   0.05 ( 0.06) n=357 x   0.40 ( 0.30) n=357 x
+                                                       paper 2.34 (1.17)         paper 14.69 (6.05)          paper 0.05 (0.07)          paper 0.28 (0.34)
+  4 Part-time weight 0.4                        2.34 ( 1.20) n=357 =  15.23 ( 6.23) n=357 =   0.06 ( 0.05) n=357 x   0.41 ( 0.28) n=357 x
+                                                       paper 2.34 (1.20)         paper 15.23 (6.23)          paper 0.06 (0.06)          paper 0.30 (0.33)
+  5 Part-time weight 0.6                        2.27 ( 1.21) n=357 =  14.60 ( 6.26) n=357 =   0.04 ( 0.05) n=357 x   0.28 ( 0.25) n=357 x
+                                                       paper 2.27 (1.21)         paper 14.60 (6.26)          paper 0.04 (0.06)          paper 0.17 (0.29)
+  6 Exclude NJ shore stores                     2.59 ( 1.20) n=326 x  16.88 ( 6.37) n=326 x   0.06 ( 0.05) n=326 =   0.42 ( 0.27) n=326 =
+                                                       paper 2.58 (1.19)         paper 16.88 (6.36)          paper 0.06 (0.05)          paper 0.42 (0.27)
+  7 Wave-2 interview week dummies               2.02 ( 1.20) n=357 x  14.25 ( 6.21) n=357 x   0.04 ( 0.05) n=357 x   0.33 ( 0.26) n=357 x
+                                                       paper 2.27 (1.20)         paper 15.79 (6.24)          paper 0.05 (0.05)          paper 0.40 (0.26)
+  8 Exclude stores called >2 times (ncalls>=3)   2.42 ( 1.29) n=294 x  14.08 ( 7.11) n=294 =   0.05 ( 0.05) n=294 =   0.31 ( 0.29) n=294 =
+                                                       paper 2.41 (1.28)         paper 14.08 (7.11)          paper 0.05 (0.05)          paper 0.31 (0.29)
+ 8b   variant: ncalls>=2                        2.48 ( 1.61) n=214    24.64 ( 8.55) n=214     0.04 ( 0.06) n=214     0.73 ( 0.34) n=214  
+  9 Weight by initial employment                                       -                          -   0.13 ( 0.05) n=357 =   0.81 ( 0.26) n=357 =
+                                                                 paper -                    paper -          paper 0.13 (0.05)          paper 0.81 (0.26)
+ 12 Pennsylvania only, placebo gap                                     -  -0.30 (22.00) n= 67 =                          -  -0.33 ( 0.74) n= 67 =
+                                                                 paper -        paper -0.30 (22.00)                    paper -         paper -0.33 (0.74)
+Matched 21 of 36 published cells (coefficient and SE at 2 decimals).
+Counts: shore stores in sample 31 (paper: 35 excluded); ncalls>=3: 63, ncalls>=2: 143 (paper: 70, 69 in NJ)
+
+IV test of the first-difference model (paper p. 784: coefficient 0.04, SE 0.24)
+  2SLS coefficient of wave-1 FTE: 0.03 (SE 0.23), n=348; GAP coefficient 15.80 (7.68)
+  OLS for comparison: -0.56 (SE 0.04)  <- pulled negative by measurement error
