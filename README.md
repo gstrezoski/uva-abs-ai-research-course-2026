@@ -30,6 +30,8 @@ Meeting folders and recordings use ISO dates (`2026-09-15-all-hands`).
 | 2 | Lab 3: library tool that calls OpenAlex, Semantic Scholar and Scopus | Gjorgji, Marc, Bas |
 | 3 | Lab 4: replicate a paper's results by describing the method to Claude | Joaquim, Marleen, Yenan |
 
+Lab 1 material is in `labs/lab1-news-article/`: slides, prompts, the `fd-article` skill and the demo paper.
+
 Lab 2 material is in `reading-materials/Lab2-Privacy-Ethics-Assignment.md` and `slides/Lab2-Privacy-Ethics-Slides.html`. The setup scripts are in `scripts/`.
 
 Lab 4 material (draft) is in `reading-materials/Lab4-Paper-Replication-Assignment.md` and `labs/lab4-replication/`, with an end-to-end capstone example in `reading-materials/`.
